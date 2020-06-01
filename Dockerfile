@@ -8,6 +8,8 @@ RUN su
 
 RUN apt update
 
+RUN sudo apt-get install zip
+
 RUN apt-get install sudo
 
 RUN sudo ./aws/install
