@@ -1,11 +1,13 @@
-From amazon/aws-cli
+From node:latest
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 
-RUN . ~/.nvm/nvm.sh
+RUN unzip awscliv2.zip
 
-RUN nvm install node
+RUN sudo ./aws/install
 
-RUN nvm install node
+RUN aws --version
 
-RUN node -e "console.log('Running Node.js ' + process.version)"
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD [ "node" ]
