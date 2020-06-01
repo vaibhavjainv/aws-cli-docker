@@ -1,7 +1,11 @@
 From amazon/aws-cli
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
-RUN sudo apt-get install -y nodejs
+RUN . ~/.nvm/nvm.sh
 
-RUN node -v
+RUN nvm install node
+
+RUN nvm install node
+
+RUN node -e "console.log('Running Node.js ' + process.version)"
