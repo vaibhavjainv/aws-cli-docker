@@ -6,6 +6,8 @@ RUN unzip awscliv2.zip
 
 RUN su
 
+RUN apt update
+
 RUN apt-get install sudo
 
 RUN sudo ./aws/install
